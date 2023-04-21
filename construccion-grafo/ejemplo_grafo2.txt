@@ -1,0 +1,9 @@
+c gcc -g -c main.c APIG23.c vector.c && gcc main.o APIG23.o vector.o -lm
+c valgrind myprog arg1 arg2
+c coloring number
+p edge 4 5
+e 1 6
+e 4 1
+e 1 2
+e 2 4
+e 6 4
