@@ -25,6 +25,7 @@ para despues manejarse internamente con los nuevos nombres.
 La parte mas costosa en cuanto a complejidad es en poder mapear los nodos con un nuevo nombre. Dada nuestra implementacion sabemos que nuestro algoritmo es muy eficiente para los casos en los que los nodos de entrada no son multiplos de la cantidad de `vertices`. Y nuestro peor caso sucede cuendo lo anterior pasa ya que se incrementa el numero de coaliciones y es costoso resolverlas.
 
 > Para mas detalles sobre la parte uno ver `consignas-parte1.pdf`
+
 #### Archivos
 
 - `APIG23.h` : Prototipo de funciones sobre el grafo
@@ -65,13 +66,23 @@ Cada 16 veces se alternan las estrategias. En total deben correr 500 veces [1] y
 
 Esto nos va a garantizar que greedy tenga distintos ordenamientos y con suerte podremos dar justo con el ordenamiento que despues de correr Greedy da el numero cromatico del grafo leido por stdin.
 
-> Para mas detalle de como funciona OrdenImparPar y OrdenJedi ver `consignas-parte2.pdf`
+Sobre las funciones de ordenacion: 
+- `OrdenImparPar` : Ordena segun la paridad de $Color[i]$, si $Color[i]$ es impar y $Color[i+1]$ par, entonces $Color[i]>Color[i+1]$. Si tienen la misma paridad entonces ordena de mayor a menor segun su color.
+
+- `OrdenJedi` : Se define una funcion :$
+F(x)=x*(\sum_{i:Color[i]=x} Grado(i,G))$ ,donde $x=0,...,r-1$, con $r
+$
+la cantidad de colores en el grafo $G$.
+
+> Para mas detalles sobre la parte dos ver `consignas-parte2.pdf`
+
 
 #### Archivos
 - `APIParte2.h` : Especificacion de Greedy y funciones de ordenes.
 - `APIParte2.c` : Implementacion de Greedy y funciones de ordenes.
 - `main.c` : Colorea un grafo G ingresado por stdin y imprime aproximacion del numero cromatico o el mismo numero cromatico.
 - `Makefile` : Para simplificar la compilacion de la parte2 del proyecto 
+
 #### Posibles mejoras
 
 - Cuanto mas complejas sean las funciones de ordenamiento mas seguro va a ser que nuestro algoritmo converga a la solucion correcta. Por lo que si llamamos mas veces a nuestras funciones de ordenamientos o añadimos nuevas va a mejorar nuestro algoritmo.
