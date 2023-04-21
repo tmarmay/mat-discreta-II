@@ -1,8 +1,8 @@
 # Matematica Discreta II (Famaf 2023)
 
 ## Integrantes 
-	- Ignacio Cuevas
-	- Tomas Marmay 
+- Ignacio Cuevas
+- Tomas Marmay 
 
 ## Grafos
 
@@ -14,11 +14,13 @@ Y en la segunda parte del trabajo se trata sobre colorear un grafo usando el alg
 ### Primera parte
 
 Debido a que los nombres de los vertices pueden ser cualquier numero entero entre 0 y 2<sup>32</sup> decidimos usar una funcion de hash para "mapear" cada nodo i con un nuevo nombre j:
+
 $$
 \begin{align}
 has(i) = j\\
 \end{align}
 $$
+
 para despues manejarse internamente con los nuevos nombres.
 La parte mas costosa en cuanto a complejidad es en poder mapear los nodos con un nuevo nombre. Dada nuestra implementacion sabemos que nuestro algoritmo es muy eficiente para los casos en los que los nodos de entrada no son multiplos de la cantidad de `vertices`. Y nuestro peor caso sucede cuendo lo anterior pasa ya que se incrementa el numero de coaliciones y es costoso resolverlas.
 
