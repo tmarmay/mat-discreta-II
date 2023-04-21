@@ -3,12 +3,22 @@
 #include <assert.h>
 #include "APIParte2.h"
 
+#define ERROR '1'
+
+typedef unsigned int u32;
+
 inline static u32 max(u32 x, u32 y) {
     return (x>y)?x:y;
 }
 
 u32 Greedy(Grafo G,u32* Orden,u32* Color) {
     u32 V = NumeroDeVertices(G);
+
+    /* Propiedad de grafo completo */
+    if ((V*(V-1))/2 == NumeroDeLados(G)){
+        return V;
+    }
+
     u32 max_color = 1;
     bool* __restrict__ coloured = calloc(V, sizeof(bool));   // dice si el i-esimo nodo esta coloreado
     bool* __restrict__ color_set = calloc(V, sizeof(bool));    // dice si el i-esimo color esta usado
@@ -78,7 +88,7 @@ char OrdenJedi(Grafo G,u32* Orden,u32* Color) {
     
     if (sums == NULL){
         printf("Error en orden jedi \n");
-        return '1';
+        return ERROR;
     }
     // calculo F(x) para cada color
     for (u32 i = 1; i < NumeroDeVertices(G); ++i) {
