@@ -1,7 +1,7 @@
 ## Teorico de la materia
 
 - `Resumenes` :
-    - [netwoks](networks.pdf)
+    - [coloreo y netwoks](coloreo-networks.pdf)
     - [matchings](matchings.pdf)
     - [codigos](codigos.pdf)
 - `Demostraciones` : 
